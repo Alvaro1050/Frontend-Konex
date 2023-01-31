@@ -1,0 +1,76 @@
+
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="form" (ngSubmit)="saveOrUpdateStudent($event)">
+        <mat-card>
+            <mat-card-header>
+                <a mat-raised-button *ngIf="modeModalCreate">Creación de mediamento</a>
+                <a mat-raised-button  *ngIf="!modeModalCreate" >Actualización de estudiante</a>
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngIf="!modeModalCreate" class="row">
+                    <div class="col-xs">
+                        <mat-form-field >
+                            <input text="text" [placeholder]="data" disabled matInput placeholder="ID"
+                                /> 
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+                        <mat-form-field>
+                            <input text="date" formControlName="nombre" matInput placeholder="Nombre"
+                                required />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+
+                        <mat-form-field>
+                            <input text="text" maxlength="15" minlength="3" formControlName="laboratorio" matInput
+                                placeholder="Laboratorio" required />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+
+                        <mat-form-field>
+                            <input type="date" formControlName="fecha_fabricacion" matInput placeholder="Fecha fabricacion" required />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+
+                        <mat-form-field>
+                            <input type="date" formControlName="fecha_vencimiento" matInput placeholder="Fecha vencimiento" />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+
+                        <mat-form-field>
+                            <input text="text" formControlName="cantidad" matInput placeholder="Cantidad"
+                                required />
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+
+                        <mat-form-field>
+                            <input text="text" formControlName="valor_unitario" matInput placeholder="Valor unitario" />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-raised-button mat-dialog-close>Cancelar</button>
+                <button [disabled]="!form.valid" *ngIf="modeModalCreate" mat-raised-button type="submit">Guardar</button>
+                <button [disabled]="!form.valid" *ngIf="!modeModalCreate" mat-raised-button type="submit">Actualizar</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</mat-dialog-content>

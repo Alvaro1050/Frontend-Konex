@@ -1,0 +1,40 @@
+
+<mat-dialog-content class="mat-typography">
+    <form [formGroup]="form" (ngSubmit)="venta($event)">
+        <mat-card>
+            <mat-card-header>
+                <a mat-raised-button *ngIf="modeModalCreate">Generar venta</a>
+            </mat-card-header>
+            <mat-card-content>
+                <div *ngIf="!modeModalCreate" class="row">
+                    <div class="col-xs">
+                        <mat-form-field >
+                            <input text="text" [placeholder]="data" disabled matInput placeholder="ID"
+                                /> 
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+
+                        <mat-form-field >
+                            <input  text="text" formControlName="cantidad"  matInput placeholder="Cantidad"/>
+                        </mat-form-field>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs">
+
+                        <mat-form-field>
+                            <input text="text" formControlName="valor_unitario" matInput placeholder="Valor unitario" />
+                        </mat-form-field>
+                    </div>
+                </div>
+            </mat-card-content>
+            <mat-card-actions align="end">
+                <button mat-raised-button mat-dialog-close>Cancelar</button>
+                <button *ngIf="modeModalCreate" mat-raised-button type="submit">Guardar</button>
+            </mat-card-actions>
+        </mat-card>
+    </form>
+</mat-dialog-content>
