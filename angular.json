@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "frontend-sico": {
+    "frontend-konex": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -20,7 +20,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/frontend-sico",
+            "outputPath": "dist/frontend-konex",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -75,10 +75,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "frontend-sico:build:production"
+              "browserTarget": "frontend-konex:build:production"
             },
             "development": {
-              "browserTarget": "frontend-sico:build:development"
+              "browserTarget": "frontend-konex:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +86,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "frontend-sico:build"
+            "browserTarget": "frontend-konex:build"
           }
         },
         "test": {
@@ -111,5 +111,5 @@
       }
     }
   },
-  "defaultProject": "frontend-sico"
+  "defaultProject": "frontend-konex"
 }

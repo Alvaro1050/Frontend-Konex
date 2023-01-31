@@ -3,9 +3,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { MedicamentosComponent } from './medicamentos/medicamentos.component';
 
 const routes: Routes = [
-  { path: 'students', component: MedicamentosComponent},
-  { path: '', redirectTo: '/students', pathMatch: 'full' },
-  { path: '**', redirectTo: '/students', pathMatch: 'full' },
+  { path: 'farmacia', component: MedicamentosComponent},
+  { path: '', redirectTo: '/farmacia', pathMatch: 'full' },
+  { path: '**', redirectTo: '/farmacia', pathMatch: 'full' },
 ];
 
 @NgModule({
